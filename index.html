@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snowflake Query</title>
+</head>
+<body>
+  <h1>Snowflake Query</h1>
+  <button onclick="fetchData()">Fetch Data</button>
+  <div id="result"></div>
+
+  <script>
+    async function fetchData() {
+      try {
+        const response = await fetch('/fetchData');
+        const data = await response.json();
+
+        if (data.error) {
+          console.error(data.error);
+        } else {
+          document.getElementById('result').innerText = JSON.stringify(data);
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    }
+  </script>
+</body>
+</html>

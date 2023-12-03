@@ -12,7 +12,7 @@ Snowflake SDK: It's used for connecting to Snowflake. Install it with:
 ### `npm install snowflake-sdk`
 
 ## Snowflake Connection Options:
-### `const connectionOptions = {
+const connectionOptions = {
   account: 'your_ACCOUNT',
   username: 'your_username',
   password: 'your_PASSWORD',

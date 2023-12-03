@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DATAPALOOZA-TCC</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    label {
+      margin-right: 10px;
+    }
+
+    input {
+      width: 300px;
+      padding: 5px;
+      margin-right: 10px;
+    }
+
+    button {
+      padding: 8px 15px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    #result {
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+  <h1>DATAPALOOZA HACKATHON COUPON CODE</h1>
+  <label for="urlInput">Enter the URL:</label>
+  <input type="text" id="urlInput">
+  <button onclick="fetchData()">Get Coupon</button>
+  <div id="result"></div>
+
+  <script>
+    async function fetchData() {
+      try {
+        const url = document.getElementById('urlInput').value;
+        const response = await fetch(`/fetchData?url=${encodeURIComponent(url)}`);
+        const data = await response.json();
+
+        if (data.error) {
+          console.error(data.error);
+        } else {
+          const resultElement = document.getElementById('result');
+          resultElement.innerHTML = '';
+
+          if (data.message) {
+            resultElement.innerText = data.message;
+          } else {
+            const resultText = document.createElement('p');
+            resultText.innerText = `Result: ${JSON.stringify(data.result)}`;
+            resultElement.appendChild(resultText);
+          }
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    }
+  </script>
+</body>
+</html>

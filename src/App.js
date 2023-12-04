@@ -10,12 +10,12 @@ const SnowflakeComponent = () => {
 
   // Snowflake connection parameters
   const connectionOptions = {
-    account: 'my56329.ap-southeast-1',
-    username: 'DeepanRaj',
-    password: 'Deepan@123456',
-    warehouse: 'COMPUTE_WH',
-    database: 'DataPalooza',
-    schema: 'TWILIGHTTCC',
+    account: '',
+    username: '',
+    password: '',
+    warehouse: ',
+    database: 'Da',
+    schema: '',
   };
 
   // Snowflake query

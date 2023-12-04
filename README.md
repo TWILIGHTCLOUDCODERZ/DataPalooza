@@ -1,6 +1,8 @@
 # Project Work flow
 TCC Demo working tool includes an online retail site hosted on AWS S3, Twilio segmentation tool for tracking coupon codes, data transfer to a Snowflake table, and a backend Node.js application for retrieving valid coupon codes used by other users.
 
+![DataPalooza-TCC](https://github.com/TWILIGHTCLOUDCODERZ/DataPalooza/assets/101945531/ca58934e-c9b4-4fe0-9bdb-637d58f2b3e0)
+
 # S3 Static Online Website
 
 ## Overview
